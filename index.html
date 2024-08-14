@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Визитка</title>
+    <title>QA Визитка</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #ffffff 33.33%, #0033a0 33.33%, #0033a0 66.66%, #d52b1e 66.66%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,13 +16,28 @@
         }
 
         .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
             text-align: center;
-            max-width: 300px;
+            max-width: 350px;
             width: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .card::before {
+            content: "QA";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 120px;
+            color: rgba(0, 115, 230, 0.05);
+            font-weight: bold;
+            transform: rotate(45deg);
+            z-index: 0;
         }
 
         .profile-pic {
@@ -30,7 +45,10 @@
             height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 15px; /* Центрирование картинки */
+            margin: 0 auto 15px;
+            border: 4px solid #0073e6;
+            position: relative;
+            z-index: 1;
         }
 
         .profile-pic img {
@@ -41,16 +59,38 @@
 
         h1 {
             margin: 10px 0;
-            font-size: 24px;
+            font-size: 26px;
+            position: relative;
+            z-index: 1;
         }
 
-        .location {
+        .greeting {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profession, .age {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .location, .phone {
             color: #777;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .social-links {
-            margin-bottom: 20px; /* Добавлен отступ для красоты */
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .social-links a {
@@ -58,10 +98,18 @@
             text-decoration: none;
             color: #333;
             font-size: 18px;
+            display: inline-block;
+            transition: color 0.3s;
         }
 
         .social-links a:hover {
             color: #0073e6;
+        }
+
+        .social-links i {
+            margin-right: 5px;
+            font-size: 18px;
+            vertical-align: middle;
         }
 
         .github-btn {
@@ -72,26 +120,33 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+            position: relative;
+            z-index: 1;
         }
 
         .github-btn:hover {
             background-color: #555;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <div class="card">
     <div class="profile-pic">
-        <img src="https://avatars.githubusercontent.com/u/178325443?v=4" alt="Фото">
+        <img src="https://avatars.githubusercontent.com/u/178325443?s=400&u=3054500b6fecadc8181918eec46dd2ab7aaa7750&v=4" alt="Фото">
     </div>
     <h1>Адель Марселевич</h1>
+    <p class="greeting">Привет! Рад вас видеть на моем сайте.</p>
+    <p class="profession">Профессия: QA/Тестировщик</p>
+    <p class="age">Возраст:30 лет</p>
     <p class="location">Санкт-Петербург</p>
-    
+    <p class="phone">Телефон: +79811510663</p>
+
     <div class="social-links">
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://www.twitter.com" target="_blank">Twitter</a>
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://t.me/Goodnightpside" target="_blank"><i class="fab fa-telegram-plane"></i>Telegram</a>
+        <a href="ваше_резюме.pdf" target="_blank"><i class="fas fa-file-pdf"></i>Резюме (PDF)</a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
     </div>
 
     <a class="github-btn" href="https://github.com/AdelGabdullin" target="_blank">GitHub</a>
@@ -99,3 +154,4 @@
 
 </body>
 </html>
+
